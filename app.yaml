@@ -1,0 +1,24 @@
+runtime: go
+api_version: go1.8
+instance_class: F1
+
+handlers:
+
+- url: /create
+  script: _go_app
+
+- url: /read
+  script: _go_app
+
+- url: /update
+  script: _go_app
+
+- url: /delete
+  script: _go_app
+
+automatic_scaling:
+  min_idle_instances: 1
+  max_idle_instances: 1
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+  max_concurrent_requests: 50
